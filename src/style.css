@@ -1,12 +1,15 @@
 .link {
-  text-decoration: none;
   color: white;
+  display: block;
+  margin: 0 auto;
+  text-decoration: none;
+  width: 50%;
 }
+
 .linkBox {
   background-color: #448aff;
   border: 2px solid #303f9f;
   border-radius: 3px;
-  margin: 0 auto;
   margin-bottom: 10px;
   margin-top: 10px;
   padding-top: 10px;
@@ -14,7 +17,7 @@
   text-align: center;
   text-decoration: none;
   text-decoration-color: aliceblue;
-  width: 50%;
+  width: 100%;
 }
 
 .linkBox:hover,
@@ -35,4 +38,25 @@ a:active {
   margin-top: 10px;
   margin-left: 40%;
   margin-bottom: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: rgb(73, 79, 82);
+  color: white;
+}
+
+body {
+  margin: 0px;
+}
+
+.navLinks {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
 }

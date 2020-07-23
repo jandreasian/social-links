@@ -31,7 +31,7 @@ class LinkForm extends React.Component {
           required
           maxLength="140"
         />
-        <button className={styles.buttonForm}>Add Tweet</button>
+        <button className={styles.buttonForm}>Add Link</button>
       </form>
     );
   }
