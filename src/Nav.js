@@ -17,8 +17,8 @@ class Nav extends React.Component {
           <Link style={navStyle} to="/sample">
             <li>Sample</li>
           </Link>
-          <Link style={navStyle} to="/about">
-            <li>About</li>
+          <Link style={navStyle} to="/create">
+            <li>Create</li>
           </Link>
         </ul>
       </nav>

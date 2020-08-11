@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "./Nav";
-import About from "./About";
+import Create from "./Create";
 import Sample from "./Sample";
 import UserLinks from "./UserLinks";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -13,7 +13,7 @@ class App extends React.Component {
           <Nav />
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/about" exact component={About} />
+            <Route path="/create" exact component={Create} />
             <Route path="/sample" exact component={Sample} />
             <Route path="/:id" component={UserLinks} />
           </Switch>
