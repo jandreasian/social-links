@@ -3,8 +3,8 @@ import styles from "./style.css";
 
 const Links = (props) => {
   return (
-    <a href={props.link} className={styles.link}>
-      <h1 className={styles.linkBox}>{props.link_text}</h1>
+    <a href={props.url} className={styles.link} target="_blank">
+      <h1 className={styles.linkBox}>{props.title}</h1>
     </a>
   );
 };
