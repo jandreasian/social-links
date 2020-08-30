@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import LinkLists from "./LinkLists";
+import styles from "./style.css";
 
 function UserLinks({ match }) {
   useEffect(() => {
@@ -19,7 +20,7 @@ function UserLinks({ match }) {
 
   return (
     <div>
-      <h1>{link.title}</h1>
+      <h1 className={styles.mainTitle}>{link.title}</h1>
       <body>
         <div>
           <LinkLists links={links} />

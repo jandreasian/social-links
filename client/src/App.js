@@ -29,7 +29,7 @@ class App extends React.Component {
       <Router>
         <PublicRoute exact path="/" component={Home} />
         <PublicRoute exact path="/create" component={Create} />
-        <PublicRoute exact path="/sample" component={Sample} />
+        <UserLinkRoute exact path="/sample" component={Sample} />
         <UserLinkRoute exact path="/:id" component={UserLinks} />
       </Router>
     );

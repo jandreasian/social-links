@@ -38,7 +38,6 @@ class Sample extends React.Component {
   render() {
     return (
       <div>
-        <LinkForm onSubmit={this.addNewLink} />
         <LinkLists links={this.state.links} />
       </div>
     );
