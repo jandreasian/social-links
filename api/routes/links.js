@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
 //Get the link by linkUrl field
 router.get("/:linkUrl", async (req, res) => {
   try {
-    const link = await Link.find({ linkUrl: req.params.linkUrl });
+    const link = await Link.findOne({ linkUrl: req.params.linkUrl });
     res.json(link);
   } catch (err) {
     res.json({ message: err });

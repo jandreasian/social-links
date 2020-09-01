@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./style.css";
+import "./style.css";
 
 const Links = (props) => {
   return (
-    <a href={props.link} className={styles.link}>
-      <h1 className={styles.linkBox}>{props.link_text}</h1>
+    <a href={props.url} className="link" target="_blank">
+      <h1 className="linkBox">{props.title}</h1>
     </a>
   );
 };
