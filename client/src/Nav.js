@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./style.css";
+import "./style.css";
 import { Link } from "react-router-dom";
 
 const navStyle = {
@@ -13,7 +13,7 @@ class Nav extends React.Component {
         <Link style={navStyle} to="/">
           <h3>Logo</h3>
         </Link>
-        <ul className={styles.navLinks}>
+        <ul className="navLinks">
           <Link style={navStyle} to="/sample">
             <li>Sample</li>
           </Link>

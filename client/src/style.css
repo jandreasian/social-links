@@ -67,3 +67,9 @@ body {
   align-items: center;
   list-style: none;
 }
+
+#container {
+  width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+}
