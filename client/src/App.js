@@ -1,9 +1,10 @@
 import React from "react";
-import Nav from "./Nav";
 import Create from "./Create";
 import Sample from "./Sample";
 import UserLinks from "./UserLinks";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
 export const UserLinkRoute = ({ component: Component, ...rest }) => {
   return <Route {...rest} component={(props) => <Component {...props} />} />;
@@ -15,7 +16,13 @@ export const PublicRoute = ({ component: Component, ...rest }) => {
       {...rest}
       component={(props) => (
         <div>
-          <Nav /> {/* HEADER ALWAYS VISIBLE */}
+          <Navbar bg="dark" variant="dark">
+            <Navbar.Brand href="/">Home</Navbar.Brand>
+            <Nav className="mr-auto">
+              <Nav.Link href="/sample">Sample</Nav.Link>
+              <Nav.Link href="/create">Create</Nav.Link>
+            </Nav>
+          </Navbar>
           <Component {...props} />
         </div>
       )}
