@@ -1,5 +1,6 @@
 import React from "react";
 import LinkLists from "./LinkLists";
+import EditLinkList from "./EditLinkList";
 import LinkForm from "./LinkForm";
 
 class Create extends React.Component {
@@ -17,7 +18,6 @@ class Create extends React.Component {
     return (
       <div>
         <LinkForm onSubmit={this.addNewLink} />
-        <LinkLists links={this.state.links} />
       </div>
     );
   }

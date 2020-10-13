@@ -5,6 +5,28 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
+import Card from "react-bootstrap/Card";
+
+const testData = [
+  {
+    _id: 1,
+    orderNumer: 1,
+    title: "Google",
+    url: "https://www.google.com",
+  },
+  {
+    _id: 2,
+    orderNumer: 2,
+    title: "Facebook",
+    url: "https://www.facebook.com",
+  },
+  {
+    _id: 3,
+    orderNumer: 3,
+    title: "LinkedIn",
+    url: "https://www.linkedin.com/in/josh-andreasian-9931a393/",
+  },
+];
 
 class LinkForm extends React.Component {
   state = {
@@ -12,9 +34,10 @@ class LinkForm extends React.Component {
     mainTitle: "",
     profileUrl: "",
     _id: "",
-    orderNumber: 1,
+    orderNumber: 0,
     title: "",
     url: "",
+    //links: testData,
     links: [],
   };
 
@@ -22,11 +45,28 @@ class LinkForm extends React.Component {
     event.preventDefault();
     this.props.onSubmit(this.state);
     //Create object to be inserted into links state.
-    var obj = { orderNumber: 1, title: this.state.title, url: this.state.url };
-    //console.log(obj);
+    var obj = {
+      orderNumber: this.state.orderNumber + 1,
+      title: this.state.title,
+      url: this.state.url,
+    };
+
     this.state.links.push(obj);
-    this.setState({ title: "", url: "" });
+    this.setState({
+      title: "",
+      url: "",
+      orderNumber: this.state.orderNumber + 1,
+    });
   };
+
+  handleRemove(orderNumber) {
+    //Creates a new list without the link
+    const newList = this.state.links.filter(
+      (link) => link.orderNumber !== orderNumber
+    );
+
+    this.setState({ links: newList });
+  }
 
   handleSubmit = (event) => {
     //Add post here
@@ -84,7 +124,7 @@ class LinkForm extends React.Component {
               <Col>
                 <InputGroup className="mb-2">
                   <InputGroup.Prepend>
-                    <InputGroup.Text>social-l.ink/</InputGroup.Text>
+                    <InputGroup.Text>sociallinks.com/</InputGroup.Text>
                   </InputGroup.Prepend>
                   <FormControl
                     id="inlineFormInputGroup"
@@ -127,6 +167,60 @@ class LinkForm extends React.Component {
                 </Button>
               </Col>
             </Form.Row>
+          </Form.Group>
+          <Form.Group>
+            <Card>
+              <Card.Header>Links</Card.Header>
+              <Card.Body>
+                <ul>
+                  {this.state.links.map((links) => (
+                    <Form>
+                      <Form.Group controlId="formBasicTitle">
+                        <Form.Row>
+                          {/* <Col column sm={1}>
+              <FaAngleUp className="moveIcon" />
+              <FaAngleDown className="moveIcon" />
+            </Col> */}
+                          <Col>
+                            <InputGroup className="mb-2">
+                              <InputGroup.Prepend>
+                                <InputGroup.Text>Title</InputGroup.Text>
+                              </InputGroup.Prepend>
+                              <FormControl
+                                placeholder="Enter title here"
+                                required
+                                value={links.title}
+                              />
+                            </InputGroup>
+                            <InputGroup className="mb-2">
+                              <InputGroup.Prepend>
+                                <InputGroup.Text>URL</InputGroup.Text>
+                              </InputGroup.Prepend>
+                              <FormControl
+                                placeholder="Enter URL here"
+                                required
+                                value={links.url}
+                              />
+                            </InputGroup>
+                          </Col>
+                          <Col sm={1}>
+                            <button
+                              type="button"
+                              onClick={() =>
+                                this.handleRemove(links.orderNumber)
+                              }
+                              // onClick={handleRemove(links.id)}
+                            >
+                              Remove
+                            </button>
+                          </Col>
+                        </Form.Row>
+                      </Form.Group>
+                    </Form>
+                  ))}
+                </ul>
+              </Card.Body>
+            </Card>
           </Form.Group>
           <Button onClick={this.handleSubmit} variant="primary" type="submit">
             Submit
