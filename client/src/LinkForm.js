@@ -6,23 +6,21 @@ import Col from "react-bootstrap/Col";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import Card from "react-bootstrap/Card";
+import { FaTimesCircle } from "react-icons/fa";
 
 const testData = [
   {
-    _id: 1,
-    orderNumer: 1,
+    orderNumber: 1,
     title: "Google",
     url: "https://www.google.com",
   },
   {
-    _id: 2,
-    orderNumer: 2,
+    orderNumber: 2,
     title: "Facebook",
     url: "https://www.facebook.com",
   },
   {
-    _id: 3,
-    orderNumer: 3,
+    orderNumber: 3,
     title: "LinkedIn",
     url: "https://www.linkedin.com/in/josh-andreasian-9931a393/",
   },
@@ -64,7 +62,8 @@ class LinkForm extends React.Component {
     const newList = this.state.links.filter(
       (link) => link.orderNumber !== orderNumber
     );
-
+    console.log(orderNumber);
+    console.log(newList);
     this.setState({ links: newList });
   }
 
@@ -224,15 +223,13 @@ class LinkForm extends React.Component {
                             </InputGroup>
                           </Col>
                           <Col sm={1}>
-                            <button
-                              type="button"
+                            <FaTimesCircle
+                              className="removeIcon"
+                              cursor="pointer"
                               onClick={() =>
                                 this.handleRemove(links.orderNumber)
                               }
-                              // onClick={handleRemove(links.id)}
-                            >
-                              Remove
-                            </button>
+                            />
                           </Col>
                         </Form.Row>
                       </Form.Group>
