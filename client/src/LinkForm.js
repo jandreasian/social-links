@@ -46,7 +46,7 @@ class LinkForm extends React.Component {
     this.props.onSubmit(this.state);
     //Create object to be inserted into links state.
     var obj = {
-      orderNumber: this.state.orderNumber + 1,
+      orderNumber: this.state.orderNumber,
       title: this.state.title,
       url: this.state.url,
     };
@@ -67,6 +67,18 @@ class LinkForm extends React.Component {
 
     this.setState({ links: newList });
   }
+
+  handleEditLinkListTitleChange = (index, event) => {
+    var links = this.state.links.slice();
+    links[index].title = event.target.value;
+    this.setState({ links: links });
+  };
+
+  handleEditLinkListUrlChange = (index, event) => {
+    var links = this.state.links.slice();
+    links[index].url = event.target.value;
+    this.setState({ links: links });
+  };
 
   handleSubmit = (event) => {
     //Add post here
@@ -173,9 +185,9 @@ class LinkForm extends React.Component {
               <Card.Header>Links</Card.Header>
               <Card.Body>
                 <ul>
-                  {this.state.links.map((links) => (
-                    <Form>
-                      <Form.Group controlId="formBasicTitle">
+                  {this.state.links.map((links, index) => (
+                    <Form key={index}>
+                      <Form.Group controlId="formEditLink">
                         <Form.Row>
                           {/* <Col column sm={1}>
               <FaAngleUp className="moveIcon" />
@@ -190,6 +202,10 @@ class LinkForm extends React.Component {
                                 placeholder="Enter title here"
                                 required
                                 value={links.title}
+                                onChange={this.handleEditLinkListTitleChange.bind(
+                                  this,
+                                  index
+                                )}
                               />
                             </InputGroup>
                             <InputGroup className="mb-2">
@@ -200,6 +216,10 @@ class LinkForm extends React.Component {
                                 placeholder="Enter URL here"
                                 required
                                 value={links.url}
+                                onChange={this.handleEditLinkListUrlChange.bind(
+                                  this,
+                                  index
+                                )}
                               />
                             </InputGroup>
                           </Col>
