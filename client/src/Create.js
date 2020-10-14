@@ -1,6 +1,4 @@
 import React from "react";
-import LinkLists from "./LinkLists";
-import EditLinkList from "./EditLinkList";
 import LinkForm from "./LinkForm";
 
 class Create extends React.Component {
