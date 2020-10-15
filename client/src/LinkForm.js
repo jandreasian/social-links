@@ -37,6 +37,7 @@ class LinkForm extends React.Component {
     url: "",
     //links: testData,
     links: [],
+    validated: false,
   };
 
   addLinkToList = (event) => {
@@ -82,9 +83,11 @@ class LinkForm extends React.Component {
   handleSubmit = (event) => {
     //Add post here
     event.preventDefault();
-    console.log(this.state);
 
-    fetch("http://localhost:3000/", {
+    const form = event.currentTarget;
+    if(form.checkValidity() === true) {
+      console.log("valid")
+      fetch("http://localhost:3000/", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -95,13 +98,19 @@ class LinkForm extends React.Component {
         title: this.state.mainTitle,
         links: this.state.links,
       }),
-    }).then((response) => {
-      if (response.ok) {
-        this.setState({ redirect: "/" });
-      } else {
-        throw new Error("Something went wrong ...");
-      }
-    });
+      }).then((response) => {
+        if (response.ok) {
+          this.setState({ redirect: "/" });
+        } else {
+          throw new Error("Something went wrong ...");
+        }
+      });
+    } 
+    if(form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    } 
+    this.setState({ validated: true });
   };
 
   render() {
@@ -110,7 +119,11 @@ class LinkForm extends React.Component {
     }
     return (
       <div className="container">
-        <Form>
+        <Form
+          noValidate
+          validated={this.state.validated}
+          onSubmit={this.handleSubmit}
+        >
           <Form.Group controlId="formBasicTitle">
             <Form.Row>
               <Form.Label column sm="0">
@@ -199,7 +212,6 @@ class LinkForm extends React.Component {
                               </InputGroup.Prepend>
                               <FormControl
                                 placeholder="Enter title here"
-                                required
                                 value={links.title}
                                 onChange={this.handleEditLinkListTitleChange.bind(
                                   this,
@@ -213,7 +225,6 @@ class LinkForm extends React.Component {
                               </InputGroup.Prepend>
                               <FormControl
                                 placeholder="Enter URL here"
-                                required
                                 value={links.url}
                                 onChange={this.handleEditLinkListUrlChange.bind(
                                   this,
@@ -239,7 +250,7 @@ class LinkForm extends React.Component {
               </Card.Body>
             </Card>
           </Form.Group>
-          <Button onClick={this.handleSubmit} variant="primary" type="submit">
+          <Button variant="primary" type="submit">
             Submit
           </Button>
         </Form>
