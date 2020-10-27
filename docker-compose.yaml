@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  api:
+    image: social-links-api
+    build:
+      context: ./api
+    ports:
+      - "3000:3000"
+    networks:
+      - social-links-app
+  client:
+    image: social-links-client
+    build:
+      context: ./client
+    ports:
+      - "8080:8080"
+    networks:
+      - social-links-app
+
+networks:
+  social-links-app:
+    driver: bridge
