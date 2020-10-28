@@ -16,6 +16,14 @@ services:
       - "8080:8080"
     networks:
       - social-links-app
+  mongo:
+    image: mongo
+    # volumes:
+    #   - /data/mongodb/db:/data/db
+    ports:
+      - "27018:27017"
+    networks:
+      - social-links-app
 
 networks:
   social-links-app:
