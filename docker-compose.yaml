@@ -2,6 +2,8 @@ version: "3.8"
 services:
   api:
     image: social-links-api
+    environment:
+      - DB_CONNECTION=mongodb://mongo/social-links-app
     build:
       context: ./api
     ports:
