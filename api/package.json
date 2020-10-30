@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js DB_CONNECTION=mongodb://localhost/social-links-app"
   },
   "author": "",
   "license": "ISC",
