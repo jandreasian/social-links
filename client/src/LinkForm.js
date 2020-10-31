@@ -123,6 +123,7 @@ class LinkForm extends React.Component {
           noValidate
           validated={this.state.validated}
           onSubmit={this.handleSubmit}
+          className="formBody"
         >
           <Form.Group controlId="formBasicTitle">
             <Form.Row>
@@ -132,7 +133,7 @@ class LinkForm extends React.Component {
               <Col>
                 <Form.Control
                   type="text"
-                  placeholder="Large text"
+                  placeholder="Enter Title Here"
                   value={this.state.mainTitle}
                   onChange={(event) =>
                     this.setState({ mainTitle: event.target.value })
@@ -152,7 +153,7 @@ class LinkForm extends React.Component {
                   </InputGroup.Prepend>
                   <FormControl
                     id="inlineFormInputGroup"
-                    placeholder="enternamehere"
+                    placeholder="Enter Name Here"
                     required
                     value={this.state.profileUrl}
                     onChange={(event) =>
@@ -165,26 +166,6 @@ class LinkForm extends React.Component {
           </Form.Group>
           <Form.Group controlId="formBasicLink">
             <Form.Row>
-              <Col>
-                <Form.Control
-                  type="text"
-                  placeholder="Enter URL here"
-                  value={this.state.url}
-                  onChange={(event) =>
-                    this.setState({ url: event.target.value })
-                  }
-                />
-              </Col>
-              <Col>
-                <Form.Control
-                  type="text"
-                  placeholder="Enter Description here"
-                  value={this.state.title}
-                  onChange={(event) =>
-                    this.setState({ title: event.target.value })
-                  }
-                />
-              </Col>
               <Col>
                 <Button onClick={this.addLinkToList} variant="primary">
                   Add URL
@@ -212,6 +193,7 @@ class LinkForm extends React.Component {
                               </InputGroup.Prepend>
                               <FormControl
                                 placeholder="Enter title here"
+                                required
                                 value={links.title}
                                 onChange={this.handleEditLinkListTitleChange.bind(
                                   this,
@@ -225,6 +207,7 @@ class LinkForm extends React.Component {
                               </InputGroup.Prepend>
                               <FormControl
                                 placeholder="Enter URL here"
+                                required
                                 value={links.url}
                                 onChange={this.handleEditLinkListUrlChange.bind(
                                   this,
