@@ -139,7 +139,7 @@ function LinkForm () {
             <Col>
               <InputGroup className="mb-2">
                 <InputGroup.Prepend>
-                  <InputGroup.Text>sociallinks.com/</InputGroup.Text>
+                  <InputGroup.Text>localhost:8080/</InputGroup.Text>
                 </InputGroup.Prepend>
                 <FormControl
                   placeholder="Enter Name Here"
