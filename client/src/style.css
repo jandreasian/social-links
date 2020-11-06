@@ -62,9 +62,9 @@ nav {
   color: white;
 }
 
-body {
+/* body {
   margin: 0px;
-}
+} */
 
 .navLinks {
   width: 40%;
@@ -111,10 +111,20 @@ body {
   margin-right: auto;
 }
 
-.footer {
-  position: fixed;
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.linkContainer {
+  margin-bottom: 150px;
+}
+
+footer {
+  margin-top: 100px;
+  position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
-  text-align: center;
+  overflow: hidden;
 }

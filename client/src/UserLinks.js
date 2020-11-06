@@ -22,7 +22,7 @@ function UserLinks({ match }) {
   };
 
   return (
-    <div>
+    <div className='linkContainer'>
       <img src={user} className="user-logo" />
       <h2 className="mainTitle">{link.title}</h2>
       <body>
@@ -30,10 +30,10 @@ function UserLinks({ match }) {
           <LinkLists links={links} />
         </div>
       </body>
-      <footer className="footer">
-      <Link to="/">
-        <img src={logo} className="app-logo"/>
-      </Link>
+      <footer>
+        <Link to="/">
+          <img src={logo} className="app-logo"/>
+        </Link>
       </footer>
     </div>
   );
