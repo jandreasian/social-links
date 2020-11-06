@@ -31,7 +31,7 @@ function LinkForm () {
   const [mainTitle, setmainTitle] =  useState('');
   const [profileUrl, setprofileUrl] =  useState('');
   const [orderNumber, setOrderNumber] =  useState(0);
-  const [links, setLinks] =  useState(testData);
+  const [links, setLinks] =  useState([]);
   const [validated, setValidated] =  useState(false);
 
   function addLinkToList(event) {
