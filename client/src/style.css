@@ -6,6 +6,11 @@
   width: 50%;
 }
 
+.link:hover {
+  text-decoration-color:  #448aff; 
+  text-decoration: none;
+}
+
 .linkBox {
   background-color: #448aff;
   border: 2px solid #303f9f;
@@ -22,12 +27,13 @@
 
 .linkBox:hover,
 a:active {
-  background-color: #3f51b5;
+  background-color: #ffffff;
+  text-decoration: none;
 }
 
 .mainTitle {
   align-items: center;
-  padding-top: 50px;
+  padding-top: 20px;
   padding-bottom: 100px;
   text-align: center;
 }
@@ -84,4 +90,31 @@ body {
   justify-content: space-around;
   display: flex;
   align-items: center;
+}
+
+.app-logo {
+  width: 8%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.app-logo:hover {
+  cursor: pointer;
+}
+
+.user-logo {
+  width: 6%;
+  display: block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }

@@ -34,10 +34,12 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <PublicRoute exact path="/" component={Home} />
-        <PublicRoute exact path="/create" component={Create} />
-        <UserLinkRoute exact path="/sample" component={Sample} />
-        <UserLinkRoute exact path="/:id" component={UserLinks} />
+        <Switch>
+          <PublicRoute exact path="/" component={Home} />
+          <PublicRoute exact path="/create" component={Create} />
+          <UserLinkRoute exact path="/sample" component={Sample} />
+          <UserLinkRoute path="/:id" component={UserLinks} />
+        </Switch>
       </Router>
     );
   }
