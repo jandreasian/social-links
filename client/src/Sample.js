@@ -12,8 +12,8 @@ const testData = [
   },
   {
     orderNumer: 1,
-    title: "Github",
-    url: "https://github.com/jandreasian",
+    title: "GitHub",
+    url: "https://github.com/jandreasian/social-links",
   },
   {
     orderNumer: 2,
