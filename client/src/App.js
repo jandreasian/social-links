@@ -1,4 +1,5 @@
 import React from "react";
+import Home from "./Home";
 import Create from "./Create";
 import Sample from "./Sample";
 import UserLinks from "./UserLinks";
@@ -34,19 +35,15 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <PublicRoute exact path="/" component={Home} />
-        <PublicRoute exact path="/create" component={Create} />
-        <UserLinkRoute exact path="/sample" component={Sample} />
-        <UserLinkRoute exact path="/:id" component={UserLinks} />
+        <Switch>
+          <PublicRoute exact path="/" component={Home} />
+          <PublicRoute exact path="/create" component={Create} />
+          <UserLinkRoute exact path="/sample" component={Sample} />
+          <UserLinkRoute path="/:id" component={UserLinks} />
+        </Switch>
       </Router>
     );
   }
 }
-
-const Home = () => (
-  <div>
-    <h1>Home Page</h1>
-  </div>
-);
 
 export default App;

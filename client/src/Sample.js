@@ -1,46 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import LinkLists from "./LinkLists";
+import logo from "../logo.png";
+import user from "../user.png";
 
 const testData = [
   {
-    _id: 1,
-    orderNumer: 1,
+    orderNumer: 0,
     title: "Google",
     url: "https://www.google.com",
   },
   {
-    id: 2,
-    orderNumer: 2,
-    title: "Facebook",
-    url: "https://www.facebook.com",
+    orderNumer: 1,
+    title: "GitHub",
+    url: "https://github.com/jandreasian/social-links",
   },
   {
-    id: 3,
-    orderNumer: 3,
+    orderNumer: 2,
     title: "LinkedIn",
     url: "https://www.linkedin.com/in/josh-andreasian-9931a393/",
-  },
+  }
 ];
 
-class Sample extends React.Component {
-  state = {
-    links: testData,
-    //links: []
-  };
+function Sample() {
 
-  addNewLink = (testData) => {
-    this.setState((prevState) => ({
-      links: [...prevState.links, testData],
-    }));
-  };
+  const [links] = useState(testData);
 
-  render() {
-    return (
-      <div>
-        <LinkLists links={this.state.links} />
-      </div>
-    );
-  }
+  return (
+    <div className='linkContainer'>
+      <img src={user} className="user-logo" />
+      <h2 className="mainTitle">Sample</h2>
+      <body>
+        <div>
+          <LinkLists links={links} />
+        </div>
+      </body>
+      <footer>
+        <Link to="/">
+          <img src={logo} className="app-logo"/>
+        </Link>
+      </footer>
+    </div>
+  );
 }
 
 export default Sample;
