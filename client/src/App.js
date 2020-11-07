@@ -1,4 +1,5 @@
 import React from "react";
+import Home from "./Home";
 import Create from "./Create";
 import Sample from "./Sample";
 import UserLinks from "./UserLinks";
@@ -44,11 +45,5 @@ class App extends React.Component {
     );
   }
 }
-
-const Home = () => (
-  <div>
-    <h1>Home Page</h1>
-  </div>
-);
 
 export default App;
