@@ -6,6 +6,7 @@ import UserLinks from "./UserLinks";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import LinkForm from "./LinkForm";
 
 export const UserLinkRoute = ({ component: Component, ...rest }) => {
   return <Route {...rest} component={(props) => <Component {...props} />} />;
@@ -37,7 +38,7 @@ class App extends React.Component {
       <Router>
         <Switch>
           <PublicRoute exact path="/" component={Home} />
-          <PublicRoute exact path="/create" component={Create} />
+          <PublicRoute exact path="/create" component={LinkForm} />
           <UserLinkRoute exact path="/sample" component={Sample} />
           <UserLinkRoute path="/:id" component={UserLinks} />
         </Switch>
