@@ -12,17 +12,11 @@ MongoDB, Express.js, React, Node.js
 
 # How to Run
 
-## Clone and Install Dependencies
-
-```terminal
-$ git clone https://github.com/jandreasian/social-links.git
-$ npm install
-```
-
 ## Start the API Server
 
 ```terminal
 cd ./api
+npm install
 npm start
 ```
 
@@ -32,10 +26,18 @@ The api will run on http://localhost:3000
 
 ```terminal
 cd ./client
+npm install
 npm start
 ```
 
 The client application will run on http://localhost:8080/
+
+## How to run the tests
+
+```terminal
+cd ./client
+npm test
+```
 
 ## \*\*If you have Docker installed you can run the command below.
 
