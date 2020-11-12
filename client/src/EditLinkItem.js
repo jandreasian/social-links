@@ -36,6 +36,7 @@ const EditLinkItem = (props) => {
                 <InputGroup.Text>Title</InputGroup.Text>
               </InputGroup.Prepend>
               <FormControl
+                className="linkTitle"
                 placeholder="Enter title here"
                 required
                 value={props.title}
@@ -47,6 +48,7 @@ const EditLinkItem = (props) => {
                 <InputGroup.Text>URL</InputGroup.Text>
               </InputGroup.Prepend>
               <FormControl
+              className="linkURL"
                 placeholder="Enter URL here"
                 required
                 value={props.url}

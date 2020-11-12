@@ -1,11 +1,11 @@
 import React from 'react';
-import Links from './Links';
+import Link from './Link';
 
 const LinkLists = (props) => {
   return (
     <div>
       {props.links.map((link) => (
-        <Links key={link.id} {...link} />
+        <Link key={link.id} {...link} />
       ))}
     </div>
   );

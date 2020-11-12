@@ -114,15 +114,16 @@ function LinkForm () {
         validated={validated}
         onSubmit={handleSubmit}
         className="formBody"
-        controlId="form1"
+        controlid="form1"
       >
-        <Form.Group controlId="formBasicTitle1">
+        <Form.Group controlid="formBasicTitle1">
           <Form.Row>
             <Form.Label column sm="0">
               Title
             </Form.Label>
             <Col>
-              <Form.Control
+              <FormControl
+                className="mainTitle"
                 type="text"
                 placeholder="Enter Title Here"
                 value={mainTitle}
@@ -134,7 +135,7 @@ function LinkForm () {
             </Col>
           </Form.Row>
         </Form.Group>
-        <Form.Group controlId="formUserUrl1">
+        <Form.Group controlid="formUserUrl1">
           <Form.Row>
             <Col>
               <InputGroup className="mb-2">
@@ -142,6 +143,7 @@ function LinkForm () {
                   <InputGroup.Text>localhost:8080/</InputGroup.Text>
                 </InputGroup.Prepend>
                 <FormControl
+                  className="profileUrl"
                   placeholder="Enter Name Here"
                   required
                   value={profileUrl}
@@ -153,10 +155,10 @@ function LinkForm () {
             </Col>
           </Form.Row>
         </Form.Group>
-        <Form.Group controlId="formBasicLink1">
+        <Form.Group controlid="formBasicLink1">
           <Form.Row>
             <Col>
-              <Button onClick={addLinkToList} variant="primary">
+              <Button className ="addUrl" onClick={addLinkToList} variant="primary">
                 Add URL
               </Button>
             </Col>

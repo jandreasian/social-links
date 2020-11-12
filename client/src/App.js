@@ -1,6 +1,5 @@
 import React from "react";
 import Home from "./Home";
-import Create from "./Create";
 import Sample from "./Sample";
 import UserLinks from "./UserLinks";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
