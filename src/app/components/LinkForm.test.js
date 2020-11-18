@@ -10,13 +10,13 @@ describe('LinkForm with initial state', () => {
     });
 
     it('Adds a new title', () => {
-      wrapper.find('.mainTitle').simulate('change', {
+      wrapper.find('.mainTitleForm').simulate('change', {
         target: {
           value: 'My Links',
         },
       });
       
-      expect(wrapper.find('.mainTitle').get(0).props.value).toBe('My Links');
+      expect(wrapper.find('.mainTitleForm').get(0).props.value).toBe('My Links');
     });
 
     it('Adds a new profileUrl', () => {

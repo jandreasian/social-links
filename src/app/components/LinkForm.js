@@ -123,7 +123,7 @@ function LinkForm () {
             </Form.Label>
             <Col>
               <FormControl
-                className="mainTitle"
+                className="mainTitleForm"
                 type="text"
                 placeholder="Enter Title Here"
                 value={mainTitle}
