@@ -1,4 +1,4 @@
-import LinkForm from '../src/LinkForm';
+import LinkForm from './LinkForm';
 import React from 'react';
 import { shallow } from 'enzyme';
 

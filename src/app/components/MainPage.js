@@ -31,7 +31,7 @@ export const PublicRoute = ({ component: Component, ...rest }) => {
   );
 };
 
-class App extends React.Component {
+class Main extends React.Component {
   render() {
     return (
       <Router>
@@ -46,4 +46,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Main;

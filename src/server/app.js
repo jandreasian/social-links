@@ -13,8 +13,10 @@ const linksRoute = require("./routes/links");
 
 app.use("/", linksRoute);
 
+const url = "mongodb://localhost/social-links-app"
+
 mongoose
-  .connect(process.env.DB_CONNECTION, {
+  .connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

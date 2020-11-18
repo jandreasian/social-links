@@ -12,35 +12,17 @@ MongoDB, Express.js, React, Node.js
 
 # How to Run
 
-## Start the API Server
-
 ```terminal
-cd ./api
 npm install
-npm start
-```
-
-The api will run on http://localhost:3000
-
-## Start the Client application
-
-```terminal
-cd ./client
-npm install
-npm start
+npm run start-dev
 ```
 
 The client application will run on http://localhost:8080/
 
+The api will run on http://localhost:3000
+
 ## How to run the tests
 
 ```terminal
-cd ./client
 npm test
-```
-
-## \*\*If you have Docker installed you can run the command below.
-
-```terminal
-docker-compose -f "docker-compose.yaml" up -d --build
 ```

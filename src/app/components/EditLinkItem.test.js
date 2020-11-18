@@ -1,4 +1,4 @@
-import EditLinkList from '../src/EditLinkItem';
+import EditLinkList from './EditLinkItem';
 import React from 'react';
 import { shallow } from 'enzyme';
 
